@@ -389,6 +389,15 @@
       line-height: 1;
       pointer-events: none;
       transition: color 0.3s;
+      z-index: 0;
+    }
+
+    .project-tag,
+    .project-title,
+    .project-desc,
+    .project-pills {
+      position: relative;
+      z-index: 1;
     }
 
     .project-card:hover .project-number { color: var(--accent-dim); }
@@ -551,8 +560,14 @@
     }
 
     .skill-icon {
-      font-size: 2rem;
+      color: var(--accent);
       margin-bottom: 0.75rem;
+      line-height: 1;
+    }
+
+    .skill-icon svg {
+      width: 28px;
+      height: 28px;
     }
 
     .skill-name {
@@ -614,7 +629,16 @@
       gap: 0.75rem;
     }
 
-    .lang-flag { font-size: 1.5rem; }
+    .lang-flag {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      background: var(--accent-dim);
+      padding: 0.3rem 0.5rem;
+      border-radius: 2px;
+    }
 
     .lang-name {
       font-weight: 500;
@@ -771,8 +795,8 @@
             <div class="stat-label">Languages</div>
           </div>
           <div>
-            <div class="stat-value">1yr</div>
-            <div class="stat-label">AI Consulting</div>
+            <div class="stat-value">5yrs</div>
+            <div class="stat-label">Working with AI</div>
           </div>
           <div>
             <div class="stat-value">10+</div>
@@ -795,6 +819,19 @@
     <div class="projects-grid">
 
       <div class="project-card reveal">
+        <span class="project-tag">Healthcare AI · Corti</span>
+        <h3 class="project-title">Clinical AI Deliveries</h3>
+        <p class="project-desc">Forward-deployed engineering for Corti's healthcare AI platform — delivered the ORBIS Buddy integration with Dedalus, AI-powered medical coding for Capio Sweden, and ambient scribe with agentic workflows for Planorg.</p>
+        <div class="project-pills">
+          <span class="pill">Healthcare AI</span>
+          <span class="pill">Agentic AI</span>
+          <span class="pill">Medical Coding</span>
+          <span class="pill">Integrations</span>
+        </div>
+        <span class="project-number">01</span>
+      </div>
+
+      <div class="project-card reveal">
         <span class="project-tag">Live · 2024</span>
         <h3 class="project-title"><a href="https://aice.dk" target="_blank" style="color: inherit; text-decoration: none; border-bottom: 1px solid var(--accent);">AICE Agency Website ↗</a></h3>
         <p class="project-desc">Designed and built the official website for AICE — a Danish AI consultancy. The site features integrated AI capabilities, clean UX, and serves as a primary business development asset for the company.</p>
@@ -804,7 +841,7 @@
           <span class="pill">UX Design</span>
           <span class="pill">Web Dev</span>
         </div>
-        <span class="project-number">01</span>
+        <span class="project-number">02</span>
       </div>
 
       <div class="project-card reveal">
@@ -817,7 +854,7 @@
           <span class="pill">MS Graph API</span>
           <span class="pill">M365</span>
         </div>
-        <span class="project-number">02</span>
+        <span class="project-number">03</span>
       </div>
 
       <div class="project-card reveal">
@@ -830,7 +867,7 @@
           <span class="pill">SharePoint</span>
           <span class="pill">RPA</span>
         </div>
-        <span class="project-number">03</span>
+        <span class="project-number">04</span>
       </div>
 
       <div class="project-card reveal">
@@ -843,7 +880,7 @@
           <span class="pill">LEGO</span>
           <span class="pill">Kbh. Kommune</span>
         </div>
-        <span class="project-number">04</span>
+        <span class="project-number">05</span>
       </div>
 
     </div>
@@ -861,11 +898,36 @@
         <div class="timeline-header">
           <div class="timeline-header-left">
             <div>
+              <div class="timeline-role">Customer Success Engineer</div>
+              <div class="timeline-company">Corti</div>
+            </div>
+          </div>
+          <span class="timeline-period">May 2026 – Present</span>
+          <span class="timeline-chevron">▾</span>
+        </div>
+        <div class="timeline-body">
+          <div class="timeline-body-inner">
+            <ul>
+              <li>Forward-deployed engineering — implementing Corti's clinical AI solutions directly in customer environments, from integration to go-live</li>
+              <li>Delivered ORBIS Buddy with Dedalus, bringing Corti's AI into the ORBIS hospital platform</li>
+              <li>Implemented AI-driven medical coding with Capio Sweden</li>
+              <li>Built ambient scribe and agentic workflow solutions with Planorg</li>
+              <li>Ran AI evaluations and data analysis to measure and improve solution quality and customer outcomes</li>
+              <li>Owned technical customer support throughout the delivery lifecycle</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item" onclick="toggleItem(this)">
+        <div class="timeline-header">
+          <div class="timeline-header-left">
+            <div>
               <div class="timeline-role">AI Consultant</div>
               <div class="timeline-company">AICE Agency</div>
             </div>
           </div>
-          <span class="timeline-period">Aug 2025 – Present</span>
+          <span class="timeline-period">Aug 2025 – May 2026</span>
           <span class="timeline-chevron">▾</span>
         </div>
         <div class="timeline-body">
@@ -1022,26 +1084,43 @@
   <div class="container">
     <p class="section-label reveal">Toolbox</p>
     <h2 class="section-title reveal">Skills & Technologies</h2>
+    <h3 class="section-title reveal" style="font-size: 1.5rem; margin-bottom: 1.5rem;">AI & Agents</h3>
     <div class="skills-grid">
-      <div class="skill-card reveal"><div class="skill-icon">🤖</div><div class="skill-name">Copilot Studio</div></div>
-      <div class="skill-card reveal"><div class="skill-icon">📊</div><div class="skill-name">Microsoft 365</div></div>
-      <div class="skill-card reveal"><div class="skill-icon">⚛️</div><div class="skill-name">React</div></div>
-      <div class="skill-card reveal"><div class="skill-icon">🐍</div><div class="skill-name">Python</div></div>
-      <div class="skill-card reveal"><div class="skill-icon">🗄️</div><div class="skill-name">SQL</div></div>
-      <div class="skill-card reveal"><div class="skill-icon">📈</div><div class="skill-name">Data Intelligence</div></div>
-      <div class="skill-card reveal"><div class="skill-icon">🧠</div><div class="skill-name">Claude · ChatGPT · Copilot</div></div>
-      <div class="skill-card reveal"><div class="skill-icon">🔌</div><div class="skill-name">AI APIs</div></div>
-      <div class="skill-card reveal"><div class="skill-icon">⚡</div><div class="skill-name">Power Automate · n8n</div></div>
+      <div class="skill-card reveal"><div class="skill-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg></div><div class="skill-name">Agentic AI & Agents</div></div>
+      <div class="skill-card reveal"><div class="skill-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-5"/><path d="M15 8V2"/><path d="M17 8a1 1 0 0 1 1 1v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1z"/><path d="M9 8V2"/></svg></div><div class="skill-name">AI APIs & Integrations</div></div>
+      <div class="skill-card reveal"><div class="skill-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 13h4"/><path d="M12 18h6a2 2 0 012 2v1"/><path d="M12 8h8"/><path d="M12 9a4.17 4.17 0 01-3 4"/><path d="M16 8V5a2 2 0 012-2"/><path d="M6 18a4 4 0 01-2-7.465"/><path d="M6.004 5.125a4 4 0 00-2.526 5.77"/><path d="M6.294 6.294A3 3 0 1112 5v13a4 4 0 11-7.967-.518"/><circle cx="16" cy="13" r="0.5" fill="currentColor"/><circle cx="18" cy="3" r="0.5" fill="currentColor"/><circle cx="20" cy="21" r="0.5" fill="currentColor"/><circle cx="20" cy="8" r="0.5" fill="currentColor"/></svg></div><div class="skill-name">Claude · ChatGPT · Copilot</div></div>
+      <div class="skill-card reveal"><div class="skill-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg></div><div class="skill-name">AI Evaluation</div></div>
+      <div class="skill-card reveal"><div class="skill-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 2v2"/><path d="M5 2v2"/><path d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1"/><path d="M8 15a6 6 0 0 0 12 0v-3"/><circle cx="20" cy="10" r="2"/></svg></div><div class="skill-name">Corti</div></div>
+    </div>
+
+    <div style="margin-top: 4rem;">
+      <h3 class="section-title reveal" style="font-size: 1.5rem; margin-bottom: 1.5rem;">Healthcare</h3>
+      <div class="skills-grid">
+        <div class="skill-card reveal"><div class="skill-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/><path d="M3.22 13H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></svg></div><div class="skill-name">Healthcare AI</div></div>
+        <div class="skill-card reveal"><div class="skill-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="M10 12.5 8 15l2 2.5"/><path d="m14 12.5 2 2.5-2 2.5"/></svg></div><div class="skill-name">Medical Coding</div></div>
+        <div class="skill-card reveal"><div class="skill-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19v3"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><rect x="9" y="2" width="6" height="13" rx="3"/></svg></div><div class="skill-name">Ambient Scribing</div></div>
+        <div class="skill-card reveal"><div class="skill-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg></div><div class="skill-name">Agentic Workflows</div></div>
+      </div>
+    </div>
+
+    <div style="margin-top: 4rem;">
+      <h3 class="section-title reveal" style="font-size: 1.5rem; margin-bottom: 1.5rem;">Engineering & Data</h3>
+      <div class="skills-grid">
+        <div class="skill-card reveal"><div class="skill-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></svg></div><div class="skill-name">Python</div></div>
+        <div class="skill-card reveal"><div class="skill-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg></div><div class="skill-name">SQL</div></div>
+        <div class="skill-card reveal"><div class="skill-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><path d="M20.2 20.2c2.04-2.03.02-7.36-4.5-11.9-4.54-4.52-9.87-6.54-11.9-4.5-2.04 2.03-.02 7.36 4.5 11.9 4.54 4.52 9.87 6.54 11.9 4.5Z"/><path d="M15.7 15.7c4.52-4.54 6.54-9.87 4.5-11.9-2.03-2.04-7.36-.02-11.9 4.5-4.52 4.54-6.54 9.87-4.5 11.9 2.03 2.04 7.36.02 11.9-4.5Z"/></svg></div><div class="skill-name">React</div></div>
+        <div class="skill-card reveal"><div class="skill-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="m19 9-5 5-4-4-3 3"/></svg></div><div class="skill-name">Data Intelligence</div></div>
+      </div>
     </div>
 
     <div style="margin-top: 4rem;">
       <p class="section-label reveal">Communication</p>
       <h3 class="section-title reveal" style="font-size: 1.5rem; margin-bottom: 1.5rem;">Languages</h3>
       <div class="lang-grid">
-        <div class="lang-card reveal"><span class="lang-flag">🇳🇴</span><div><div class="lang-name">Norwegian</div><div class="lang-level">Native</div></div></div>
-        <div class="lang-card reveal"><span class="lang-flag">🇬🇧</span><div><div class="lang-name">English</div><div class="lang-level">Fluent</div></div></div>
-        <div class="lang-card reveal"><span class="lang-flag">🇩🇰</span><div><div class="lang-name">Danish</div><div class="lang-level">Fluent</div></div></div>
-        <div class="lang-card reveal"><span class="lang-flag">🇩🇪</span><div><div class="lang-name">German</div><div class="lang-level">Fluent</div></div></div>
+        <div class="lang-card reveal"><span class="lang-flag">NO</span><div><div class="lang-name">Norwegian</div><div class="lang-level">Native</div></div></div>
+        <div class="lang-card reveal"><span class="lang-flag">EN</span><div><div class="lang-name">English</div><div class="lang-level">Fluent</div></div></div>
+        <div class="lang-card reveal"><span class="lang-flag">DA</span><div><div class="lang-name">Danish</div><div class="lang-level">Fluent</div></div></div>
+        <div class="lang-card reveal"><span class="lang-flag">DE</span><div><div class="lang-name">German</div><div class="lang-level">Fluent</div></div></div>
       </div>
     </div>
 
@@ -1053,13 +1132,6 @@
         <div>
           <div class="edu-degree">BSc Global Business Informatics</div>
           <div class="edu-school">IT-University of Copenhagen · Thesis on informal automation (RPA) · Electives: Discrete Mathematics, Data Intelligence</div>
-        </div>
-      </div>
-      <div class="edu-card reveal">
-        <div class="edu-year">2017–2020</div>
-        <div>
-          <div class="edu-degree">High School Diploma</div>
-          <div class="edu-school">Stavanger Katedralskole · Stavanger, Norway</div>
         </div>
       </div>
     </div>
@@ -1074,7 +1146,7 @@
       <h2 class="section-title reveal" style="font-size: clamp(1.8rem, 4vw, 2.8rem); margin-bottom: 1rem;">Let's build something.</h2>
       <p class="reveal" style="color: var(--muted); margin-bottom: 2rem; font-size: 0.95rem;">Open to consulting opportunities, full-time roles, and interesting projects in AI, automation, and digital transformation.</p>
       <a href="mailto:carlos.hebbinghaus@gmail.com" class="contact-email reveal">carlos.hebbinghaus@gmail.com</a>
-      <p class="reveal" style="margin-top: 0.75rem; color: var(--muted); font-size: 0.95rem;"><a href="tel:+4553591530" style="color: var(--muted); text-decoration: none;">+45 53 59 15 30</a></p>
+      <p class="reveal" style="margin-top: 0.75rem; color: var(--muted); font-size: 0.95rem;"><a href="tel:+4741078037" style="color: var(--muted); text-decoration: none;">+47 41 07 80 37</a></p>
       <div class="social-links reveal">
         <a href="https://www.linkedin.com/in/carlos-hebbinghaus-88871a252/" target="_blank" class="social-link">LinkedIn ↗</a>
       </div>
